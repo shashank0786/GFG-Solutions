@@ -1,0 +1,11 @@
+class Solution:
+    # User function Template for python3
+    
+    def reverseWords(self,S):
+        a=[]
+        p=S.split('.')
+        n=len(p)
+        for i in range(n-1,-1,-1):
+            a.append(p[i])
+        return ".".join(a)
+         

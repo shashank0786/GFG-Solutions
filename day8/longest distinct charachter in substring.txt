@@ -1,0 +1,14 @@
+class Solution:
+
+    def longestSubstrDitinctChars(self, S):
+        # code here
+        set={}
+        p=0
+        q=0
+        for i in range(len(S)):
+            if S[i] in set:
+                p=max(p,set[S[i]]+1)
+            q=max(q,i-p+1)
+            set[S[i]]=i
+        return q    
+       

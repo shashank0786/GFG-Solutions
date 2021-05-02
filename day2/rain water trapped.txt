@@ -1,0 +1,20 @@
+class Solution:
+    # @param A : tuple of integers
+    # @return an integer
+    def trap(self, A):
+        result=0
+        L=0
+        R=len(A)-1
+        left_max=0
+        right_max=0
+        while L<R:
+            left_max=max(left_max,A[L])
+            right_max=max(right_max,A[R])
+            if left_max<=right_max:
+                result+=left_max-A[L]
+                L+=1
+            else:
+                result+=right_max-A[R]
+                R-=1
+                
+        return result  

@@ -1,0 +1,11 @@
+class Solution:    
+    def pairWiseSwap(self, head):
+        # code here
+        p=head
+        if p is None or p.next is None:
+            return p
+        r=p.next.next
+        p.next.next=p
+        s=p.next
+        p.next=self.pairWiseSwap(r)
+        return s  

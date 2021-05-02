@@ -1,0 +1,14 @@
+def intersetPoint(head1,head2):
+    #code here
+    p=head1
+    q=head2
+    while (p!=q):
+        if p==None:
+            p=head2
+        else:
+            p=p.next
+        if q==None:
+            q=head1
+        else:
+            q=q.next
+    return p.data   

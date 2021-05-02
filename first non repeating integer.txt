@@ -1,0 +1,21 @@
+#User function Template for python3
+
+class Solution:
+	def FirstNonRepeating(self, A):
+		# Code here
+		m={}
+		p=[]
+		s=''
+		for i in A:
+		    if i not in m:
+		        m[i]=1
+		        p.append(i)
+		    else:
+		        m[i]=0
+		    while p and m[p[0]]==0:
+		        p.pop(0)
+		    if not p:
+		        s+='#'
+		    else:
+		        s+=p[0]
+		return s     

@@ -1,0 +1,24 @@
+class Solution:
+    #User function Template for python3
+    
+    def spirallyTraverse(self,matrix, r, c): 
+        p=0
+        q=0
+        ans=[]
+        while p<r and q<c:
+            for i in range(q,c):
+                ans.append(matrix[p][i])
+            p+=1
+            for i in range(p,r):
+                ans.append(matrix[i][c-1])
+            c-=1
+            if p<r:
+                for i in range(c-1,q-1,-1):
+                    ans.append(matrix[r-1][i])
+            r-=1
+            if q<c:
+                for i in range(r-1,p-1,-1):
+                    ans.append(matrix[i][q])
+            q+=1
+        return ans    
+                

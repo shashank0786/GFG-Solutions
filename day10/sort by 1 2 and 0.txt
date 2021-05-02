@@ -1,0 +1,17 @@
+class Solution:
+    #Function to sort a linked list of 0s, 1s and 2s.
+    def segregate(self, head):
+        #code here
+        a=[]
+        p=head
+        q=head
+        while head:
+            a.append(head.data)
+            head=head.next
+        a.sort()
+        for i in range(len(a)):
+            q.data=a[i]
+            q=q.next
+        return p    
+      
+    

@@ -1,0 +1,23 @@
+ def ispar(self,x):
+        # code here
+        stack=[]
+        for char in x:
+            if char in ["{","(","["]:
+                stack.append(char)
+            else:
+                if not stack:
+                    return False
+                p=stack.pop()
+                if p=='{':
+                    if char!="}":
+                        return False
+                if p=='(':
+                    if char!=")":
+                        return False
+                if p=='[':
+                    if char!=']':
+                        return False
+        if stack:
+            return False
+        return True                
+      

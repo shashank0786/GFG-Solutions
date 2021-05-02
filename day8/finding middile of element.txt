@@ -1,0 +1,24 @@
+import math
+# your task is to complete this function
+
+'''
+class node:
+    def __init__(data):
+        self.data = data
+        self.next = None
+'''
+
+# function should return index to the any valid peak element
+def findMid(head):
+    # Code here
+    # return the value stored in the middle node
+    p=head
+    a=[]
+    while p:
+        a.append(p.data)
+        p=p.next
+    if len(a)%2==0:
+        return a[math.floor((len(a)+1)/2)]
+    else:
+        return a[(len(a)-1)//2]
+        

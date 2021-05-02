@@ -1,0 +1,17 @@
+class Solution:
+    
+    def isRotated(self,str1,str2):
+        if len(str1)!=len(str2):
+           return 0
+        if len(str1)<2:
+           return str1==str2
+        n=len(str2)
+        anti=""
+        clock=""
+        anti=(anti+str2[n-2:]+str2[0:n-2])
+        clock=(clock+str2[2:]+str2[0:2])
+        return (str1==clock or str1==anti)
+    
+    
+    
+    

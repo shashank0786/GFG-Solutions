@@ -1,0 +1,33 @@
+from collections import OrderedDict
+#User function Template for python3
+
+# design the class in the most optimal way
+
+class LRUCache:
+      
+    #Constructor for initializing the cache capacity with the given value.  
+    def __init__(self,cap):
+        #code here
+        self.cap=cap
+        self.map=OrderedDict()
+        
+        
+    #Function to return value corresponding to the key.
+    def get(self, key):
+        #code here
+        if key in self.map:
+            value=self.map.pop(key)
+            self.map[key]=value
+            return value
+        return -1
+        
+        
+    #Function for storing key-value pair.   
+    def set(self, key, value):
+        #code here
+        if key in self.map:
+            self.map.pop(key)
+        elif len(self.map)==self.cap:
+            self.map.popitem(last=False)
+        self.map[key]=value
+

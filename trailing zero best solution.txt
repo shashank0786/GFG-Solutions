@@ -1,0 +1,12 @@
+class Solution:
+    def trailingZeroes(self, N):
+    	#code here 
+    	if N<5:
+    	    return 0
+    	power=1
+    	count=0
+    	while pow(5,power)<=N:
+    	    count+=N//pow(5,power)
+    	    power+=1
+    	return count    
+    

@@ -1,0 +1,15 @@
+class Solution:
+    #Function to reverse a linked list.
+    def reverseList(self, head):
+        curr=head
+        prev=None
+        while curr:
+            nextp=curr.next
+            curr.next=prev
+            prev=curr
+            curr=nextp
+        head=prev
+        return head
+        
+            
+      

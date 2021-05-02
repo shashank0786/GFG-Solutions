@@ -1,0 +1,13 @@
+class Solution:
+    #Function to check if the linked list has a loop.
+    def detectLoop(self, head):
+        #code here
+        
+        curr=head
+        while curr:
+            curr=curr.next
+            if curr.next.next==curr:
+                return True
+            elif curr.next==None:
+                return False
+        return False

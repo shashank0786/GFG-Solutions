@@ -1,0 +1,27 @@
+class solution:
+    def longestPalindrome(self, S):
+        N=len(S)
+    
+        def helper(l,r):
+            while (l>=0 and r<N and S[l]==S[r]):
+                l-=1
+                r+=1
+                
+            
+        return S[l+1,r]
+        
+        
+        result=""
+        for i in range(N):
+            test=helper(i,i)
+            if len(test)>len(result):
+                result=test
+            
+        
+            test=helper(i,i+1)
+            if len(test)>len(result):
+                result=test
+            
+        return result        
+    
+    

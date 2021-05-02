@@ -1,0 +1,13 @@
+def equilibriumPoint(self,A, N):
+
+        # Your code here
+        s=sum(A)
+        val=0
+        if N==1:
+            return 1
+        for i in range(N):
+            s=s-A[i]
+            if val==s:
+                return i+1
+            val+=A[i]
+        return -1

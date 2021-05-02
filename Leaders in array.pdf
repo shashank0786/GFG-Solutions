@@ -1,0 +1,12 @@
+#TC=O(n)
+[11:52 AM]
+def leaders(self, A, N):
+        #Code here
+        stack=[]
+        lead=N-1
+        stack.append(A[lead])
+        for i in range(N-2,-1,-1):
+            if A[lead]<=A[i]:
+                A[lead]=A[i]
+                stack.append(A[i])
+        return stack[::-1]
